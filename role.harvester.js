@@ -1,12 +1,13 @@
 var capacitySpawn = SPAWN_ENERGY_CAPACITY
 var roleUpgrader = require('role.upgrader');
+var roleBuilder = require ('role.builder');
 var roleHarvester = {
 
-    /** @param {Creep} creep **/
+
     run: function(creep) {
-        /*if (capacitySpawn = StructureSpawn.energyCapacity && creep.carry.RESOURCE_ENERGY == 50){
-         roleUpgrader.run(creep)
-         }*/
+        if (capacitySpawn === StructureSpawn.energyCapacity && creep.carry.RESOURCE_ENERGY == 50){
+         roleBuilder.run(creep)
+         }
 
         if(creep.carry.energy < creep.carryCapacity) {
             var sources = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);

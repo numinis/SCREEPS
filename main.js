@@ -2,7 +2,7 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleJanitor = require('role.janitor');
-
+var controller = require('bitch.controller');
 
 module.exports.loop = function () {
     for (var index in Memory.creeps) {
@@ -10,8 +10,22 @@ module.exports.loop = function () {
             delete Memory.creeps[index];
         }
     }
-    /* var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-     console.log('Harvesters: ' + harvesters.length);*/
+
+    /*
+        voor elke room
+            controller.roomHandle(roomname)
+    */
+/*
+    for (var room in Game.rooms) {
+        controller.handleRoom(room);
+    }
+
+*/
+
+
+
+    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+     console.log('Harvesters: ' + harvesters.length);
 
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
     console.log('Builders: ' + builders.length);
@@ -22,13 +36,13 @@ module.exports.loop = function () {
     var janitors = _.filter(Game.creeps, (creep) => creep.memory.role == 'janitor');
     console.log('janitors: ' + upgraders.length);
 
-    /*if(harvesters.length <1) {
+    if(harvesters.length <5) {
      var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'harvester'});
-     console.log('Spawning new harvester: ' + newName);}*/
+     console.log('Spawning new harvester: ' + newName);}
 
-    if(builders.length <5) {
+    /*if(builders.length <5) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK/*,WORK*/,WORK,CARRY,MOVE], undefined, {role: 'builder'});
-        console.log('Spawning new builder: ' + newName);}
+        console.log('Spawning new builder: ' + newName);}*/
 
     if(upgraders.length <2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'upgrader'});
