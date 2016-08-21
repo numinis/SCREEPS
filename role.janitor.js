@@ -23,7 +23,7 @@
 
 }
 module.exports = roleJanitor;*/
-var roleBuilder - require ('role.builder')
+var roleBuilder = require ('role.builder')
 var roleJanitor = {
     run: function (creep) {
         roleBuilder.run(creep)
