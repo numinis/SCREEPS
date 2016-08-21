@@ -1,19 +1,12 @@
 var roleUpgrader = require('role.upgrader');
 var roleHarvester = require('role.harvester');
-var roleJanitor = require('role.janitor');
-
 //var site = creep.pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
 var roleBuilder = {
     run: function (creep) {
-        var structure = creep.pos.findClosestByPath(creep.room.find(FIND_STRUCTURES), { filter: (structure) => { return structure.structureType == STRUCTURE_ROAD && structure.hits < Math.floor(structure.hitsMax / 2); }});
         if(creep.room.CONTROLLER_DOWNGRADE<1000)
         {
             roleUpgrader.run(creep)
         }
-       /* if (structure.length !== 0)
-        {
-            roleJanitor.run(creep)
-        }*/
         if(creep.room.find(FIND_CONSTRUCTION_SITES).length == 0){
             roleHarvester.run(creep)}
 
