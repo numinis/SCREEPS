@@ -1,4 +1,4 @@
-var roleBuilder = require('role.builder');
+/*r roleBuilder = require('role.builder');
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleJanitor = require('role.janitor');
@@ -16,7 +16,7 @@ werk assignen aan creeps
  // ➜ objects for ['fred']
 
 
-*/
+*//*
 var controller = {
     handleRoom : function(room) {
         var creeps2 = _.filter(Game.creeps, (creep) => {return creep.room == room});
@@ -35,3 +35,4 @@ evt workers spreaden over resources*/
 voor alle creeps in room na eindigen vorige taak
 kijken 
 
+*/
