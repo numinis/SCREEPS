@@ -64,7 +64,7 @@ module.exports.loop = function () {
             roleBuilder.run(creep);
         }
         if(creep.memory.role == 'janitor') {
-            roleBuilder.run(creep);
+            roleJanitor.run(creep);
         }
     }
 }
