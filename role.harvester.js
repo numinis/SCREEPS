@@ -4,16 +4,15 @@ var roleHarvester = {
 
 
     run: function (creep) {
-         var currentCapacity = creep.energyAvailable;
-         var totalCapacity = creep.energyCapacityAvailable;
+         var currentCapacity = game.room.energyAvailable;
+         var totalCapacity = game.room.energyCapacityAvailable;
 
          if (currentCapacity === totalCapacity && creep.carry.energy === 50){
          roleBuilder.run(creep)
          }
-        else
-        {
 
-            if (creep.carry.energy < creep.carryCapacity) {
+
+        if (creep.carry.energy < creep.carryCapacity) {
                 var sources = creep.pos.findClosestByPath(FIND_SOURCES);
                 if (creep.harvest(sources) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(sources);
@@ -39,8 +38,8 @@ var roleHarvester = {
             }
 
         }
-    }
-}
+    };
+
 
 
 module.exports = roleHarvester;
