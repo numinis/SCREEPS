@@ -31,7 +31,7 @@ var roleBuilder = require('role.builder')
 var roleJanitor = {
     run: function (creep) {
         var structure = creep.pos.findClosestByPath(creep.room.find(FIND_STRUCTURES), { filter: (structure) => { return structure.structureType == STRUCTURE_ROAD && structure.hits < Math.floor(structure.hitsMax / 2); }});
-        if(creep.carry.energy === 0)
+        if(creep.carry.energy <10)
         {
             var sources = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
             if(creep.harvest(sources) == ERR_NOT_IN_RANGE) {
