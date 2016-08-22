@@ -4,8 +4,8 @@ var roleHarvester = {
 
 
     run: function (creep) {
-         var currentCapacity = game.room.energyAvailable;
-         var totalCapacity = game.room.energyCapacityAvailable;
+         var currentCapacity = creep.room.energyAvailable;
+         var totalCapacity = creep.room.energyCapacityAvailable;
 
          if (currentCapacity === totalCapacity && creep.carry.energy === 50){
          roleBuilder.run(creep)
