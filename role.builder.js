@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 //var site = creep.pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
 var roleBuilder = {
     run: function (creep) {
-        if(creep.room.CONTROLLER_DOWNGRADE<1000)
+        if(creep.room.find(FIND_CONSTRUCTION_SITES).length == 0)/*creep.room.CONTROLLER_DOWNGRADE<1000)*/
         {
             roleUpgrader.run(creep)
         }
