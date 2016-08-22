@@ -7,9 +7,9 @@ var roleHarvester = {
         var currentCapacity = creep.energyAvailable;
         var totalCapacity = creep.energyCapacityAvailable;
 
-        if (currentCapacity === totalCapacity && creep.carry.energy === 50){
+        /*if (currentCapacity === totalCapacity && creep.carry.energy === 50){
          roleBuilder.run(creep)
-         }
+         }*/
 
         if(creep.carry.energy < creep.carryCapacity) {
             var sources = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
