@@ -67,4 +67,4 @@ module.exports.loop = function () {
             roleJanitor.run(creep);
         }
     }
-}
+};
