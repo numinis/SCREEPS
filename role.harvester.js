@@ -7,17 +7,13 @@ var roleHarvester = {
          var currentCapacity = creep.room.energyAvailable;
          var totalCapacity = creep.room.energyCapacityAvailable;
 
-         if (currentCapacity === totalCapacity && creep.carry.energy === 50){
-         roleBuilder.run(creep)
-         }
-
 
         if (creep.carry.energy < creep.carryCapacity) {
                 var sources = creep.pos.findClosestByPath(FIND_SOURCES);
                 if (creep.harvest(sources) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(sources);
                 }
-            }
+        }
 
             else {
                 var targets = creep.room.find(FIND_STRUCTURES, {
@@ -35,9 +31,13 @@ var roleHarvester = {
                 /*else if (creep.room.SPAWN_ENERGY_CAPACITY === StructureSpawn.energyCapacity && creep.carry.RESOURCE_ENERGY === 50){
                  roleBuilder.run(creep)
                  }*/
-            }
+                }
 
+        if (currentCapacity === totalCapacity && creep.carry.energy === 50){
+            roleBuilder.run(creep)
         }
+    }
+
     };
 
 
