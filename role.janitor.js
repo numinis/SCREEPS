@@ -27,6 +27,7 @@
  module.exports = roleJanitor;
  */
 /*var structure = creep.pos.findClosestByPath(creep.room.find(FIND_STRUCTURES), { filter: (structure) => { return structure.structureType == STRUCTURE_ROAD && structure.hits < Math.floor(structure.hitsMax / 2); }});*/
+var roleBuilder = require('role.builder')
 var roleJanitor = {
     run: function (creep) {
         var structure = creep.pos.findClosestByPath(creep.room.find(FIND_STRUCTURES), { filter: (structure) => { return structure.structureType == STRUCTURE_ROAD && structure.hits < Math.floor(structure.hitsMax / 2); }});
@@ -41,6 +42,9 @@ var roleJanitor = {
         if(creep.repair(structure) == ERR_NOT_IN_RANGE) {
             creep.moveTo(structure);
         }
+        /* if (structure.length != null && structure.length <1){
+         roleBuilder.run(creep)
+         }*/
     }
 
 
