@@ -8,7 +8,7 @@ var roleBuilder = {
             roleUpgrader.run(creep)
         }
         /*if(creep.room.find(FIND_CONSTRUCTION_SITES).length == 0){
-            roleHarvester.run(creep)}*/
+         roleHarvester.run(creep)}*/
 
 
         if(creep.memory.building && creep.carry.energy == 0) {
