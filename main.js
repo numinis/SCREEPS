@@ -37,19 +37,19 @@ module.exports.loop = function () {
     console.log('janitors: ' + upgraders.length);
 
     if(harvesters.length <5) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'harvester'});
+        var newName = Game.spawns['Spawn1'].createCreep([/*WORK,WORK,*/WORK,WORK,CARRY,/*CARRY,*/MOVE/*,MOVE,MOVE*/], undefined, {role: 'harvester'});
         console.log('Spawning new harvester: ' + newName);}
 
     if(builders.length <1) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'builder'});
+        var newName = Game.spawns['Spawn1'].createCreep([/*WORK,WORK,*/WORK,WORK,CARRY,/*CARRY,*/MOVE/*,MOVE,MOVE*/], undefined, {role: 'builder'});
         console.log('Spawning new builder: ' + newName);}
 
     if(upgraders.length <2) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'upgrader'});
+        var newName = Game.spawns['Spawn1'].createCreep([/*WORK,WORK,*/WORK,WORK,CARRY,/*CARRY,*/MOVE/*,MOVE,MOVE*/], undefined, {role: 'upgrader'});
         console.log('Spawning new upgrader: ' + newName);}
 
     if(janitors.length <1) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'janitor'});
+        var newName = Game.spawns['Spawn1'].createCreep([/*WORK,WORK,*/WORK,WORK,CARRY,/*CARRY,*/MOVE/*,MOVE,MOVE*/], undefined, {role: 'janitor'});
         console.log('Spawning new janitor: ' + newName);}
 
     for(var name in Game.creeps) {
